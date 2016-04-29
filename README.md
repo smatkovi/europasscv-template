@@ -1,7 +1,7 @@
 # europasscv-template
 ### Unofficial LaTeX class for Europass CV template (version 2013)
 
-The europecv2013 class is an unofficial LaTeX implementation of the July 2013 model for curricula vitae (the "Europass CV") as recommended by the European Commission.
+The europecv2013 class is an unofficial LaTeX implementation of the July 2013 model for curriculum vitae (the "Europass CV") as recommended by the European Commission.
 
 This project is a fork of [leinardi/europecv2013](https://github.com/leinardi/europecv2013).
 
@@ -18,16 +18,42 @@ This project is a fork of [leinardi/europecv2013](https://github.com/leinardi/eu
 
 ## Installation on Unix based systems
 
-See [leinardi/europecv2013](https://github.com/leinardi/europecv2013).
+All you have to do is to clone the repository inside of a specific folder:
 
 ```sh
-mkdir -p ~/texmf/tex/latex/
-cd ~/texmf/tex/latex/
-git clone https://github.com/leinardi/europecv2013.git
+git clone https://github.com/auino/europasscv-template.git
 ```
 
+See [leinardi/europecv2013](https://github.com/leinardi/europecv2013) for an installation "at the system level".
+
+## Usage
+
+You can use the library to build both your curriculum vitae and a cover letter (see [leinardi/europecv2013](https://github.com/leinardi/europecv2013) for more information)
+
+### Curriculum Vitae
+
+* build your curriculum vitae, starting from `examples/cv_template_*.tex` templates
+* configure the `compile_cv.sh` script accordingly to your needs
+* compile your curriculum vitae:
+  ```sh
+  sh compile_cv.sh <file.tex> <publications.bib> <language>
+  ```
+  The output files `cv_<language>.pdf` and `cv_academic_<language>.pdf` will be produced on the main directory.
+  Samples files are available on the [examples directory](https://github.com/auino/europasscv-template/tree/master/examples).
+
+### Cover Letter
+
+* build your cover letter, starting from `examples/cl_template_*.tex` templates
+* compile your cover letter:
+  ```sh
+  sh compile_cl.sh <file.tex> <language>
+  ```
+  The output file `cl_<language>.pdf` will be produced on the main directory.
+  Samples files are available on the [examples directory](https://github.com/auino/europasscv-template/tree/master/examples).
+
 ## License
-See [leinardi/europecv2013](https://github.com/leinardi/europecv2013).
+
+See [leinardi/europecv2013](https://github.com/leinardi/europecv2013) for more information.
 
 This is a derived work under the terms of the LaTeX project public license (LPPL).
 It is based on version 2014-06-27 of `europecv.cls` which is part of the europecv package by Nicola Vitacolonna.
@@ -36,7 +62,7 @@ A copy of europecv, including the unmodified version of `europecv.cls` is availa
 
 ## Known issues
 
-See [leinardi/europecv2013](https://github.com/leinardi/europecv2013).
+See [leinardi/europecv2013](https://github.com/leinardi/europecv2013) for more information.
 
 * For now only English and Italian versions are fully translated.
 
