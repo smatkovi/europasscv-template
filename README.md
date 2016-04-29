@@ -9,7 +9,7 @@ This project is a fork of [leinardi/europecv2013](https://github.com/leinardi/eu
 
 * curriculum template compliant to [Europass 2013 version](https://europass.cedefop.europa.eu/en/about)
 * profile picture support
-* QR Code support (use a [QR Code Generator](http://goqr.me/#t=vcard) to generate the picture)
+* QR Code support (use a [QR Code generator](http://goqr.me/#t=vcard) to generate the picture)
 * enhanced support to scientific contents (journal/conference papers, technical reports, review activities; optional automated contents numbering)
 * multi-language support
 * advanced bibliography management (optional automatic removal of author names)
@@ -34,6 +34,7 @@ You can use the library to build both your curriculum vitae and a cover letter (
 
 * build your curriculum vitae, starting from `examples/cv_template_*.tex` templates
 * configure the `compile_cv.sh` script accordingly to your needs
+* change files on the `img` folder accordingly to your needs (use a [QR Code generator](http://goqr.me/#t=vcard) to generate your QR Code)
 * compile your curriculum vitae:
 
   ```sh
