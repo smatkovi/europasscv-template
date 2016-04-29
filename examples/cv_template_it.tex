@@ -22,6 +22,8 @@
 
 \usepackage{pgf,pgffor}
 
+% Your list of publications (by bibliography label)
+
 % papers
 \newcommand{\papers}{book1,article1,article2}
 
@@ -39,6 +41,8 @@
 	{International Conference on Computer Systems 2014 (ICCS 2014), 2014}, % Designated Reviewer
 	{International Conference on Programming Languages 2015 (ICPL 2015), 2015} % Designated Reviewer
 }
+
+% Automatically computed values
 
 % papers count
 \newcounter{paperscount}
@@ -130,6 +134,7 @@
 
 \ecveducation{settembre 2000 - febbraio 2002}{Attestato di frequenza - Office 97, Excel, Access, Internet Explorer}{Centro di Formazione Professionale Guglielmo Marconi, Bologna}{}{}
 
+% automatically generated publications section
 \ecvsection{Pubblicazioni e risultati scientifici}
 
 \ecvitem{\ifthenelse{\boolean{academic}}{Articoli scientifici}{}}{\begin{itemize}
