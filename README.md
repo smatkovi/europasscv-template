@@ -1,9 +1,20 @@
 # europasscv-template
-## Unofficial LaTeX class for European curricula 2013
+### Unofficial LaTeX class for Europass CV template (version 2013)
 
 The europecv2013 class is an unofficial LaTeX implementation of the July 2013 model for curricula vitae (the "Europass CV") as recommended by the European Commission.
 
 This project is a fork of [leinardi/europecv2013](https://github.com/leinardi/europecv2013).
+
+## Features
+
+* curriculum template compliant to [Europass 2013 version](https://europass.cedefop.europa.eu/en/about)
+* profile picture support
+* QR Code support (use a [QR Code Generator](http://goqr.me/#t=vcard) to generate the picture)
+* enhanced support to scientific contents (journal/conference papers, technical reports, review activities; optional automated contents numbering)
+* multi-language support
+* advanced bibliography management (optional automatic removal of author names)
+* automatic generation of academic template (including entire details of publications)
+* easy to launch compiling scripts
 
 ## Installation on Unix based systems
 See [leinardi/europecv2013](https://github.com/leinardi/europecv2013).
