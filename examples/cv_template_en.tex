@@ -22,6 +22,8 @@
 
 \usepackage{pgf,pgffor}
 
+% Your list of publications (by bibliography label)
+
 % papers
 \newcommand{\papers}{book1,article1,article2}
 
@@ -39,6 +41,8 @@
 	{International Conference on Computer Systems 2014 (ICCS 2014), 2014}, % Designated Reviewer
 	{International Conference on Programming Languages 2015 (ICPL 2015), 2015} % Designated Reviewer
 }
+
+% Automatically computed values
 
 % papers count
 \newcounter{paperscount}
@@ -73,7 +77,7 @@
 \ecvemail{mario.rossi@hisdomain.org}
 \ecvhomepage{\href{http://www.mariorossisamplewebsite.com}{www.mariorossisamplewebsite.com}}
 \ecvlinkedin{\href{http://www.linkedin.com/in/mariorossi.sample}{linkedin.com/in/mariorossi.sample}}
-%\ecvgender{Maschile}
+%\ecvgender{Male}
 \ecvdateofbirth{January 1st, 1950}
 \ecvnationality{Italian}
 
@@ -120,6 +124,7 @@ Work carried out in training courses in Strasbourg, Slovenia and Budapest.}
 \item research methods
 \end{itemize}}{}
 
+% automatically generated publications section
 \ecvsection{Scientific Publications}
 
 \ecvitem{\ifthenelse{\boolean{academic}}{Scientific Papers}{}}{\begin{itemize}
