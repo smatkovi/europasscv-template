@@ -67,8 +67,8 @@ See [leinardi/europecv2013](https://github.com/leinardi/europecv2013) for more i
 
 ## Known issues
 
-* For now only English and Italian versions are fully translated.
-* Apologize for code quality: code is not so clean, but it works.
+* for now only English and Italian versions are fully translated.
+* apologize for code quality: code is not so clean, but it works.
 
 Any contribution is welcome.
 
