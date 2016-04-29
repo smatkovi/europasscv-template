@@ -1,0 +1,181 @@
+\documentclass[helvetica,english,logo,notitle,totpages,utf8]{europecv2013}
+\usepackage{graphicx}
+\usepackage[a4paper,top=1.2cm,left=1.2cm,right=1.2cm,bottom=2.5cm]{geometry}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{comment}
+
+\usepackage{natbib}
+\usepackage{bibentry}
+\nobibliography*
+
+\usepackage{ifthen}
+\newboolean{academic}
+\setboolean{academic}{false}
+\newboolean{numbereditems}
+\setboolean{numbereditems}{false}
+\newcounter{numbercount}
+\setcounter{numbercount}{3}
+\newcommand{\addnumber}{
+\ifthenelse{\boolean{academic}\and\boolean{numbereditems}}{{\bfseries{[Allegato A\thenumbercount]}}\addtocounter{numbercount}{1}}{}
+}
+
+\usepackage{pgf,pgffor}
+
+% papers
+\newcommand{\papers}{book1,article1,article2}
+
+% technical reports
+\newcommand{\technicalreports}{techreport1,techreport2,techreport3}
+
+% journal reviews
+\newcommand{\journalreviews}{
+	{International Journal of Latex Guru (IJLG), 2016}, % Technical Program Committee
+	{Journal of Markup Languages (JML), 2015} % Designated Reviewer
+}
+
+% conference reviews
+\newcommand{\conferencereviews}{
+	{International Conference on Computer Systems 2014 (ICCS 2014), 2014}, % Designated Reviewer
+	{International Conference on Programming Languages 2015 (ICPL 2015), 2015} % Designated Reviewer
+}
+
+% papers count
+\newcounter{paperscount}
+\setcounter{paperscount}{0}
+\foreach \x [count=\xi] in \papers {\addtocounter{paperscount}{1}}
+
+% technical reports count
+\newcounter{technicalreportscount}
+\setcounter{technicalreportscount}{0}
+\foreach \x [count=\xi] in \technicalreports {\addtocounter{technicalreportscount}{1}}
+
+% journal reviews count
+\newcounter{journalreviewscount}
+\setcounter{journalreviewscount}{0}
+\foreach \x [count=\xi] in \journalreviews {\addtocounter{journalreviewscount}{1}}
+
+% conference reviews count
+\newcounter{conferencereviewscount}
+\setcounter{conferencereviewscount}{0}
+\foreach \x [count=\xi] in \conferencereviews {\addtocounter{conferencereviewscount}{1}}
+
+% total reviews count
+\newcounter{totalreviewscount}
+\setcounter{totalreviewscount}{\thejournalreviewscount}
+\addtocounter{totalreviewscount}{\theconferencereviewscount}
+
+% personal information
+
+\ecvname{Mario Rossi}
+\ecvaddress{ABC Road, 100/2 - 12345 Rome (Italy)}
+\ecvtelephone[+39 02 1234567]{+39 392 1234567}
+\ecvemail{mario.rossi@hisdomain.org}
+\ecvhomepage{\href{http://www.mariorossisamplewebsite.com}{www.mariorossisamplewebsite.com}}
+\ecvlinkedin{\href{http://www.linkedin.com/in/mariorossi.sample}{linkedin.com/in/mariorossi.sample}}
+%\ecvgender{Maschile}
+\ecvdateofbirth{January 1st, 1950}
+\ecvnationality{Italian}
+
+\ecvfootnote{}
+\ecvbeforepicture{\raggedleft}
+\ecvqrcode[width=3cm]{../img/qrcode}
+\ecvafterqrcode{\ecvspace{-2.5cm}}
+\ecvpicture[height=3cm]{../img/avatar}
+
+\begin{document}
+
+\selectlanguage{english}
+
+\begin{europecv}
+
+\thispagestyle{plain}
+
+\ecvpersonalinfo%[10pt]
+
+\ecvposition{Job applied for}{Human Resources}
+
+\ecvsection{Work experience}
+
+\ecvworkexperience{August 2002 -- Present}{Independent consultant}{British Council}{123, Bd Ney, 75023 Paris (France)}{Evaluation of European Commission youth training support measures for youth national agencies and young people}
+
+\ecvworkexperience{March 2002 -- July 2002}{Internship}{European Commission, Youth Unit, DG Education and Culture}{
+- evaluating youth training programmes for SALTO UK and the partnership between the Council of Europe and European Commission\par
+- organizing and running a 2 day workshop on non-formal education for Action 5 large scale projects focusing on quality, assessment and recognition\par
+- contributing to the steering group on training and developing action plans on training for the next 3 years. Working on the Users Guide for training and the support measures}
+
+\ecvworkexperience{October 2001 -- February 2002}{Researcher / Independent Consultant}{Council of Europe, Budapest (Hungary)}{}{Working in a research team carrying out in-depth qualitative evaluation of the 2 year Advanced Training of Trainers in Europe using participant observations, in-depth interviews and focus groups.\par
+Work carried out in training courses in Strasbourg, Slovenia and Budapest.}
+
+\ecvsection{Education and training}
+
+\ecveducation{1997 -- 2001}{PhD - Thesis Title: `Young People in the Construction of the Virtual University', Empirical research on e-learning}{Brunel University, London United Kingdom}{}{}
+
+\ecveducation{1993 -- 1997}{Bachelor of Science in Sociology and Psychology}{Brunel University, London United Kingdom}{
+\begin{itemize}
+\item sociology of risk
+\item sociology of scientific knowledge / information society
+\item anthropology
+\item E-learning and Psychology
+\item research methods
+\end{itemize}}{}
+
+\ecvsection{Scientific Publications}
+
+\ecvitem{\ifthenelse{\boolean{academic}}{Scientific Papers}{}}{\begin{itemize}
+\item \foreach \x [count=\xi] in \papers {\ifnum\xi=1 \bibentry{\x} \addnumber \fi} % first item
+\foreach \x [count=\xi] in \papers {\ifnum\xi=1 \else \item \bibentry{\x} \addnumber \fi} % remaining items
+\end{itemize}
+}
+
+\ifthenelse{\boolean{academic}}{\ecvitem{Technical Reports}{\begin{itemize}
+\foreach \x [count=\xi] in \technicalreports {\item \bibentry{\x} \addnumber\ }
+\end{itemize}}}{}
+
+\ifthenelse{\boolean{academic}}{\ecvitem{Review Activities}{
+
+\vspace{0.3em}
+
+\begin{itemize}
+\foreach \x [count=\xi] in \journalreviews {\item {\x} \addnumber}
+\foreach \x [count=\xi] in \conferencereviews {\item {\x} \addnumber}
+\end{itemize}}}{}
+
+\ifthenelse{\boolean{academic}}{}{
+	\ecvitem{Altro}{
+		I have registered $\thetechnicalreportscount$ internal technical reports.
+
+		Moreover, I have accomplished $\thetotalreviewscount$ reviews on international journals and conferences. % $\thejournalreviewscount$ and $\theconferencereviewscount$
+	}
+}
+
+\ecvsection{Personal skills}
+
+\ecvmothertongue[20pt]{English}
+\ecvlanguageheader
+\ecvlanguage{French}{C1}{C2}{B2}{C1}{C2}
+\ecvlastlanguage{German}{A2}{A2}{A2}{A2}{A2}
+\ecvlanguagefooter[10pt]
+
+\ecvitem[10pt]{Communication skills}{
+- team work: I have worked in various types of teams from research teams to national league hockey. For 2 years I coached my university hockey team\par
+- mediating skills: I work on the borders between young people, youth trainers, youth policy and researchers, for example running a 3 day workshop at CoE Symposium `Youth Actor of Social Change', and my continued work on youth training programmes\par
+- intercultural skills: I am experienced at working in a European dimension such as being a rapporteur at the CoE Budapest `youth against violence seminar' and working with refugees.}
+
+\ecvitem[10pt]{Organisational / managerial skills}{
+- whilst working for a Brussels based refugee NGO `Convivial' I organized a `Civil Dialogue between refugees and civil servants at the European Commission 20th June 2002\par
+- during my PhD I organised a seminar series on research methods}
+
+\ecvitem[10pt]{Computer skills}{Creating pieces of Art and visiting Modern Art galleries. Enjoy all sports particularly hockey, football and running. Love to travel and experience different cultures.}
+
+\ecvitem[10pt]{Other skills}{Creating pieces of Art and visiting Modern Art galleries. Enjoy all sports particularly hockey, football and running. Love to travel and experience different cultures.}
+
+\ecvitem[10pt]{Driving licence}{A, B}
+
+\end{europecv}
+
+\bibliographystyle{plainnat}
+\newsavebox\mytempbib
+\savebox\mytempbib{\parbox{\textwidth}{\bibliography{bibliography}}}
+
+\end{document} 
