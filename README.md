@@ -1,7 +1,7 @@
 # europasscv-template
 ### Unofficial LaTeX class for Europass CV template (version 2013)
 
-The europecv2013 class is an unofficial LaTeX implementation of the July 2013 model for curriculum vitae (the [Europass CV](https://europass.cedefop.europa.eu/en/about)) as recommended by the European Commission.
+The europecv2013 class is an unofficial LaTeX implementation of the July 2013 model for curriculum vitae (the [Europass CV](https://europass.cedefop.europa.eu/en/about)), as recommended by the European Commission.
 
 This project is a fork of [leinardi/europecv2013](https://github.com/leinardi/europecv2013).
 
