@@ -35,9 +35,11 @@ You can use the library to build both your curriculum vitae and a cover letter (
 * build your curriculum vitae, starting from `examples/cv_template_*.tex` templates
 * configure the `compile_cv.sh` script accordingly to your needs
 * compile your curriculum vitae:
+
   ```sh
   sh compile_cv.sh <file.tex> <publications.bib> <language>
   ```
+
   The output files `cv_<language>.pdf` and `cv_academic_<language>.pdf` will be produced on the main directory.
   Samples files are available on the [examples directory](https://github.com/auino/europasscv-template/tree/master/examples).
 
