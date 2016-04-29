@@ -42,7 +42,7 @@ You can use the library to build both your curriculum vitae and a cover letter (
   ```
 
   The output files `cv_<language>.pdf` and `cv_academic_<language>.pdf` will be produced on the main directory.
-  Samples files are available on the [examples directory](https://github.com/auino/europasscv-template/tree/master/examples).
+  Samples files are available on the [sample output directory](https://github.com/auino/europasscv-template/tree/master/examples/output).
 
 ### Cover Letter
 
@@ -54,7 +54,7 @@ You can use the library to build both your curriculum vitae and a cover letter (
   ```
 
   The output file `cl_<language>.pdf` will be produced on the main directory.
-  Samples files are available on the [examples directory](https://github.com/auino/europasscv-template/tree/master/examples).
+  Samples files are available on the [sample output directory](https://github.com/auino/europasscv-template/tree/master/examples/output).
 
 ## License
 
