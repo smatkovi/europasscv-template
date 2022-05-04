@@ -1,0 +1,219 @@
+\documentclass[helvetica,german,logo,notitle,totpages,utf8]{europecv2013}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\urlstyle{same}
+\usepackage{graphicx}
+\usepackage[a4paper,top=1.2cm,left=1.2cm,right=1.2cm,bottom=2.5cm]{geometry}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{comment}
+
+\usepackage{natbib}
+\usepackage{bibentry}
+\nobibliography*
+
+\usepackage{ifthen}
+\newboolean{academic}
+\setboolean{academic}{false}
+\newboolean{numbereditems}
+\setboolean{numbereditems}{false}
+\newcounter{numbercount}
+\setcounter{numbercount}{3}
+\newcommand{\addnumber}{
+\ifthenelse{\boolean{academic}\and\boolean{numbereditems}}{{\bfseries{[Attachment A\thenumbercount]}}\addtocounter{numbercount}{1}}{}
+}
+
+\usepackage{pgf,pgffor}
+
+% Your list of publications (by bibliography label)
+
+% papers
+\newcommand{\papers}{book1,article1,article2}
+
+% technical reports
+\newcommand{\technicalreports}{techreport1,techreport2,techreport3}
+
+% journal reviews
+\newcommand{\journalreviews}{
+	{International Journal of Latex Guru (IJLG), 2016}, % Technical Program Committee
+	{Journal of Markup Languages (JML), 2015} % Designated Reviewer
+}
+
+% conference reviews
+\newcommand{\conferencereviews}{
+	{International Conference on Computer Systems 2014 (ICCS 2014), 2014}, % Designated Reviewer
+	{International Conference on Programming Languages 2015 (ICPL 2015), 2015} % Designated Reviewer
+}
+
+% Automatically computed values
+
+% papers count
+\newcounter{paperscount}
+\setcounter{paperscount}{0}
+\foreach \x [count=\xi] in \papers {\addtocounter{paperscount}{1}}
+
+% technical reports count
+\newcounter{technicalreportscount}
+\setcounter{technicalreportscount}{0}
+\foreach \x [count=\xi] in \technicalreports {\addtocounter{technicalreportscount}{1}}
+
+% journal reviews count
+\newcounter{journalreviewscount}
+\setcounter{journalreviewscount}{0}
+\foreach \x [count=\xi] in \journalreviews {\addtocounter{journalreviewscount}{1}}
+
+% conference reviews count
+\newcounter{conferencereviewscount}
+\setcounter{conferencereviewscount}{0}
+\foreach \x [count=\xi] in \conferencereviews {\addtocounter{conferencereviewscount}{1}}
+
+% total reviews count
+\newcounter{totalreviewscount}
+\setcounter{totalreviewscount}{\thejournalreviewscount}
+\addtocounter{totalreviewscount}{\theconferencereviewscount}
+
+% personal information
+
+\ecvname{Sebastian Matkovich}
+\ecvaddress{D\"oblinger G\"urtel 9/28, 1190 Wien}
+\ecvtelephone{+436766517141}
+\ecvdateofbirth{10. Dezember 1989}
+\ecvnationality{Österreich}
+
+% \ecvfootnte{}
+%\ecvbeforepicture{\raggedleft}
+%\ecvqrcode[width=3cm]{../img/qrcode}
+%\ecvafterqrcode{\ecvspace{-2.5cm}}
+\ecvpicture[height=3cm]{avatar.png}
+
+\begin{document}
+
+\selectlanguage{german}
+
+\begin{europecv}
+
+\thispagestyle{plain}
+
+\ecvpersonalinfo%[10pt]
+
+
+\ecvsection{Arbeitserfahrung}
+
+	\ecvworkexperience{seit September 2021}{Physiklehrer}{Wien}{Wiener S\"angerknaben}{Karenzvertretung Informatikunterricht}
+\ecvworkexperience{J\"anner 2021 - M\"arz 2021}{Fahrradbote}{Wien}{Mjam}{Essenszustellung mit dem Fahrrad}
+\ecvworkexperience{Februar 2019 - Juni 2021}{Programmierer}{Wien}{Enrag GmbH}{Programmieren von Thermodynamik- und Fluiddynamiksimulationen}
+  \ecvworkexperience{2018}{Programmierer}{Wien}{}{\vspace{-4mm}\begin{itemize}\item Das Hinzuf\"ugen der Sprache Ungarisch zu einer Swype-Tastatur namens OkBoard, ver\"offentlicht f\"ur das mobile Betriebssystem SailfishOS, die auf Wischgesten \"uber die Tastatur basiert, unter der Anleitung in README.md von \href{https://git.tuxfamily.org/okboard/okb-engine.git/}{https://git.tuxfamily.org/okboard/okb-engine.git/}, ver\"offentlicht unter \href{https://openrepos.net/content/aviarus/hungarian-language-okboard}{https://openrepos.net/content/aviarus/hungarian-language-okboard}
+      \item Das im Funktionsumfang um Bilddarstellung mit HTML-Syntax im QML-Code Erweitern, Kompilieren und Ver\"offentlichen von einem Vokabellernprogramm namens Nemosyne f\"ur SailfishOS, basierend auf Mnemosyne, dessen Quellcode unter \href{https://github.com/prplmnky/harbour-nemosyne}{https://github.com/prplmnky/harbour-nemosyne} einsehbar ist, ver\"offentlichte Pakete f\"ur Tablet und Telefon unter \href{https://openrepos.net/content/aviarus/nemosyne}{https://openrepos.net/content/aviarus/nemosyne} einsehbar
+      \item das Adaptieren einer app f\"ur SailfishOS um Betriebssytemabbilder \"uber USB einem Computer bootf\"ahig zur Verf\"ugung zu stellen f\"ur das Oneplus X, bei dem der Pfad f\"ur den Zugriff auf USB leicht anders war, geschrieben in C++, ver\"offentlicht unter \href{https://openrepos.net/content/aviarus/isodrive-oneplus-x}{https://openrepos.net/content/aviarus/isodrive-oneplus-x}
+  \end{itemize}}
+\ecvworkexperience{2013}{Servicekraft}{Treevent}{Wien}{Service- und Aufbauarbeiten im Catering}
+\ecvworkexperience{seit 2012}{Nachhilfelehrer}{Schulerfolgstraining}{M\"odling}{Nachhilfe in Mathematik haupts\"achlich f\"ur Oberstufe, selten in Betriebswirtschaftslehre, Physik oder Informatik, in Reihenfolge der H\"aufigkeit}
+\ecvworkexperience{2012}{Interviewer}{Triconsult}{Wien}{Telefoninterviews}
+\ecvworkexperience{J\"anner 2010 - September 2010}{Sanit\"ater}{Zivildienstserviceagentur}{St. P\"olten}{Zivildienst beim Arbeitersamariterbund \"Osterreich}
+
+
+\ecvsection{Ausbildung}
+
+
+\ecveducation{seit  M\"arz 2020}{Master of Science Technische Physik}{Technische Universit\"at Wien}{}{}
+\ecveducation{Oktober 2010 - M\"arz 2020}{Bachelor of Science Technische Physik}{Technische Universit\"at Wien}{}{}
+\ecveducation{September 2005 - Juni 2006}{Auslandsschuljahr in Ungarn}{Vastv\'ari P\'al Gimn\'azium Sz\'ekesfeh\'erv\'ar (Stuhlweienburg)}{}{}
+\ecveducation{September 2000 - September 2009}{Pflichtschule und Oberstufe in AHS}{Bg \& Brg M\"odling Keimgasse}{Schulform Gymnasium mit besonderer Berücksichtigung der Informatik, ab Oberstufe in Laptopklasse, maturiert vertiefend in Informatik}{}
+% automatically generated publications section
+%\ecvsection{Scientific Publications}
+%
+%\ecvitem{\ifthenelse{\boolean{academic}}{Scientific Papers}{}}{\begin{itemize}
+%\item \foreach \x [count=\xi] in \papers {\ifnum\xi=1 \bibentry{\x} \addnumber \fi} % first item
+%\foreach \x [count=\xi] in \papers {\ifnum\xi=1 \else \item \bibentry{\x} \addnumber \fi} % remaining items
+%\end{itemize}
+%}
+%
+%\ifthenelse{\boolean{academic}}{\ecvitem{Technical Reports}{\begin{itemize}
+%\foreach \x [count=\xi] in \technicalreports {\item \bibentry{\x} \addnumber\ }
+%\end{itemize}}}{}
+%
+%\ifthenelse{\boolean{academic}}{\ecvitem{Review Activities}{
+%
+%\vspace{0.3em}
+%
+%\begin{itemize}
+%\foreach \x [count=\xi] in \journalreviews {\item {\x} \addnumber}
+%\foreach \x [count=\xi] in \conferencereviews {\item {\x} \addnumber}
+%\end{itemize}}}{}
+%
+%\ifthenelse{\boolean{academic}}{}{
+%	\ecvitem{Altro}{
+%		I have registered $\thetechnicalreportscount$ internal technical reports.
+%
+%		Moreover, I have accomplished $\thetotalreviewscount$ reviews on international journals and conferences. % $\thejournalreviewscount$ and $\theconferencereviewscount$
+%	}
+%}
+
+\ecvsection{Kenntnisse}
+
+\ecvmothertongue[20pt]{Deutsch, Ungarisch}
+\ecvlanguageheader
+\ecvlanguage{Englisch}{C1}{C2}{B2}{C1}{C2}
+\ecvlastlanguage{Schwedisch}{B1}{A2}{B1}{A2}{A2}
+\ecvlanguagefooter[10pt]
+
+% automatically generated publications section
+%\ecvsection{Scientific Publications}
+%
+%\ecvitem{\ifthenelse{\boolean{academic}}{Scientific Papers}{}}{\begin{itemize}
+%\item \foreach \x [count=\xi] in \papers {\ifnum\xi=1 \bibentry{\x} \addnumber \fi} % first item
+%\foreach \x [count=\xi] in \papers {\ifnum\xi=1 \else \item \bibentry{\x} \addnumber \fi} % remaining items
+%\end{itemize}
+%}
+%
+%\ifthenelse{\boolean{academic}}{\ecvitem{Technical Reports}{\begin{itemize}
+%\foreach \x [count=\xi] in \technicalreports {\item \bibentry{\x} \addnumber\ }
+%\end{itemize}}}{}
+%
+%\ifthenelse{\boolean{academic}}{\ecvitem{Review Activities}{
+%
+%\vspace{0.3em}
+%
+%\begin{itemize}
+%\foreach \x [count=\xi] in \journalreviews {\item {\x} \addnumber}
+%\foreach \x [count=\xi] in \conferencereviews {\item {\x} \addnumber}
+%\end{itemize}}}{}
+%
+%\ifthenelse{\boolean{academic}}{}{
+%	\ecvitem{Altro}{
+%		I have registered $\thetechnicalreportscount$ internal technical reports.
+%
+%		Moreover, I have accomplished $\thetotalreviewscount$ reviews on international journals and conferences. % $\thejournalreviewscount$ and $\theconferencereviewscount$
+%	}
+%}
+
+
+\ecvitem[10pt]{Kommunikation}{  - Teamarbeit: Als Programmierer bei Enrag beim Schreiben von Programmen mit meinen Kolleginnen und Kollegen.}
+
+
+\ecvitem[10pt]{Computerkenntnisse}{\vspace{-6mm}\begin{itemize}\item Programmieren in Visual Basic für Excel; in der Schule Netzwerktechnik und die Sprachen Java, Javascript, PHP, HTML und Prolog
+  \item auf der Universität C, C++ und Fortran; bei der Arbeit C\# und Python, auch mit Jupyter; privat auch Python und C/C++; in der Bourne Again Shell (bash) zuhause;
+  \item verwendete Linuxdistributionen in zeitlicher Reihenfolge: Ubuntu (basierend auf Debian), Linux Mint (Basierend auf Debian), f\"ur Bachelorarbeit Scientific Linux (basierend auf CentOS, welches auf Redhat Linux basiert) SteamOS (basierend auf Debian), Debian, Crunchbang (leichtgewichtig, basierend auf debian), Bunsenlabs (aus Crunchbang entstanden, leichtgewichtig, basierend auf Debian), MX Linux (Basierend auf Debian, entstanden aus AntiX), archbang (leichtgewichtig, bleeding edge im Gegensatz zu Debian basierten, die vielgepr\"ufte verh\"altnism\"a{\ss}ig alte Programme oder Programmpakete verwendet immer am neuesten stand, leichtgewichtig, von crunchbang inspiriert, auf Archlinux basierend);
+  \item Am Telefon: IphoneFirmware(sp\"ater in IOS umbenannt) gejailbreakt, das hei{\ss}t root-rechte erlangt was das \"Aquivalent zu Administratorrechten bei Windows ist, Maemo (entwickelt von Nokia, basierend auf Debian, es konnten Debianpakete vom Desktop direkt installiert und verwendet werden), Meego (fusion aus Moblin von intel und Maemo von Nokia, allerdings mit rpm-Softwarepaketen im gegensatz zu deb-Softwarepaketen von Mamo und Debian), SailfishOS bis heute(geschrieben von Jolla, das aus dem Entwicklerteam bei Nokia entstand, das Meego geschrieben hat mit einer Ausf\"uhrungsschicht um Androidapps ausf\"uhren zu k\"onnen) bis heute
+  \item rpm-Pakete erstellen aus kompilierten Programmen oder deren Modulen, Fehler in Quellcodes von Softwarepaketen f\"ur SailfishOS finden und ausbessern, beziehungsweise gew\"unschte fehlende Funktionalit\"aten hinzuf\"ugen
+  \end {itemize}}
+
+    \ecvitem[10pt]{Sonstige F\"ahigkeiten}{\vspace{-6mm}\begin{itemize}\item Kenntnis von Musiktheorie durch Flöten- und Trompetenunterricht und Chorsingen seit dem achten Lebensjahr, selbst ein bisschen Klavier beigebracht, unter anderem zweites Vorspiel des Donauwalzers von Johann Strauss Sohn und dessen 1. Teil, Von Fremden Menschen und L\"andern (Schumann), was die ehemalige Kennmelodie der Sendung Menschenbilder auf \"O1 war und From where I am (Enya)
+      \item J\"ahrlich einmal Segeln, mit 12 Jahren Amateurregatta in dieser Altersklasse gewonnen
+      \item Reparaturarbeiten am Fahrrad
+      \end{itemize}}
+
+\ecvitem[10pt]{Lenkberechtigung}{Klasse B}
+
+\end{europecv}
+
+\bibliographystyle{plainnat}
+\newsavebox\mytempbib
+\savebox\mytempbib{\parbox{\textwidth}{\bibliography{bibliography}}}
+
+\end{document} 
